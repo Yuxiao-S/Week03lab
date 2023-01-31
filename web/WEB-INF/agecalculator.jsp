@@ -14,10 +14,10 @@
     <body>
         <h1>Age Calculator</h1>
         <form action="">
-            Enter your age here: <input type="number" name="age" value="${age}"><br>
+            Enter your age here: <input type="text" name="age" value="${age}"><br>
             <input type="submit" value="Age next birthday"><br>
-            ${message}<br>
-            <a href=" "></a>
         </form>
+            <p>${message}</p>
+            <a href=" "></a>            
     </body>
 </html>

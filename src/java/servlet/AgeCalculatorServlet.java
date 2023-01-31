@@ -28,7 +28,7 @@ public class AgeCalculatorServlet extends HttpServlet {
         
         request.setAttribute("age",age);
         
-        if(age==null){
+        if(age==null||age.equals("")){
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
                 .forward(request,response);
         
@@ -52,6 +52,17 @@ public class AgeCalculatorServlet extends HttpServlet {
             return;
         }
         
+        if(age > 0){
+        getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
+                .forward(request,response);
+        
+            request.setAttribute("message","Your next birthday will be");
+        
+            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
+                    .forward(request, response);   
+            
+            return;
+        }        
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
                 .forward(request,response);       
     }
